@@ -1,9 +1,9 @@
-const {
-    beforeAll
-} = require("@jest/globals");
-const {
-    describe
-} = require("yargs");
+/**
+ * @jest-environment jsdom
+ */
+
+const { game } = require("../game");
+
 
 beforeAll(() => {
     let fs = require("fs");
@@ -11,7 +11,7 @@ beforeAll(() => {
     document.open();
     document.write(fileContents);
     document.close();
-})
+});
 
 describe("game object contains correct keys", () => {
     test("score key exists", () => {
